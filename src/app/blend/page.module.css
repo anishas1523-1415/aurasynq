@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: -1rem;
+  background: #000;
+  color: white;
+  overflow: hidden;
+}
+
+.header {
+  padding: 3rem 1rem 1rem;
+  text-align: center;
+  z-index: 10;
+}
+
+.header h1 { font-size: 2.5rem; font-weight: 800; }
+.header p { color: var(--text-muted); }
+
+.blendStage {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blob {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 50px currentColor;
+}
+
+.myBlob {
+  color: #ff007f;
+  background: #ff007f;
+  left: 10%;
+}
+
+.friendBlob {
+  color: #00f0ff;
+  background: #00f0ff;
+  right: 10%;
+}
+
+.blobAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  z-index: 2;
+  border: 4px solid rgba(0,0,0,0.5);
+}
+
+.blobMerge {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%) scale(1.5);
+  background: linear-gradient(135deg, #ff007f, #00f0ff);
+  color: #a450e4;
+}
+
+.controls {
+  padding: 2rem;
+  text-align: center;
+  z-index: 10;
+  min-height: 150px;
+}
+
+.blendBtn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  transition: transform 0.2s;
+}
+
+.blendBtn:active { transform: scale(0.95); }
+
+.status {
+  font-size: 1.2rem;
+  animation: pulse 1s infinite alternate;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
