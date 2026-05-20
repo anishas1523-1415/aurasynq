@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^7.3.7",
+    "@clerk/themes": "^2.4.57",
     "@distube/ytdl-core": "^4.16.12",
     "@ducanh2912/next-pwa": "^10.2.9",
     "@phosphor-icons/react": "^2.1.10",
