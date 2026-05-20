@@ -1,6 +1,7 @@
 :root {
   --primary-color: #8A2BE2;
-  --bg-color: #050505;
+  --bg-color: #090d18;
+  --bg-accent: rgba(88, 132, 255, 0.18);
   --text-color: #ffffff;
   --text-muted: #888888;
   --glass-bg: rgba(255, 255, 255, 0.05);
@@ -20,6 +21,11 @@
 
 body {
   background-color: var(--bg-color);
+  background-image:
+    radial-gradient(circle at top, rgba(104, 116, 255, 0.16), transparent 34%),
+    radial-gradient(circle at 20% 20%, rgba(138, 43, 226, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgba(255, 105, 180, 0.10), transparent 24%),
+    linear-gradient(180deg, #0b1020 0%, #0d1424 45%, #090d18 100%);
   color: var(--text-color);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
@@ -39,6 +45,7 @@ a {
   height: 100dvh;
   position: relative;
   z-index: 10;
+  background: transparent;
 }
 
 .main-content {

@@ -206,6 +206,7 @@ export function AudioProvider({ children }) {
   // Maintain refs to avoid stale closure scopes in YT player callbacks
   const currentTrackRef = useRef(null);
   const queueRef = useRef([]);
+  const isPlayingRef = useRef(false);
 
   useEffect(() => {
     currentTrackRef.current = currentTrack;
@@ -214,6 +215,10 @@ export function AudioProvider({ children }) {
   useEffect(() => {
     queueRef.current = queue;
   }, [queue]);
+
+  useEffect(() => {
+    isPlayingRef.current = isPlaying;
+  }, [isPlaying]);
 
   // Initialize dynamic script and silence generator
   useEffect(() => {
@@ -232,6 +237,24 @@ export function AudioProvider({ children }) {
       window.onYouTubeIframeAPIReady = () => {
         console.log("AuraSynq Debug: YouTube Iframe API Loaded");
         setIsYtReady(true);
+
+        const activeTrack = currentTrackRef.current;
+        if (activeTrack && ytPlayerRef.current && typeof ytPlayerRef.current.loadVideoById === "function") {
+          try {
+            ytPlayerRef.current.loadVideoById({ videoId: activeTrack.id });
+            if (isPlayingRef.current && typeof ytPlayerRef.current.playVideo === "function") {
+              setTimeout(() => {
+                try {
+                  ytPlayerRef.current?.playVideo();
+                } catch (err) {
+                  console.warn("YT autoplay after ready failed:", err);
+                }
+              }, 100);
+            }
+          } catch (err) {
+            console.warn("YT sync on ready failed:", err);
+          }
+        }
       };
 
       if (window.YT && window.YT.Player) {
@@ -410,6 +433,15 @@ export function AudioProvider({ children }) {
         if (ytPlayerRef.current && typeof ytPlayerRef.current.loadVideoById === "function") {
           try {
             ytPlayerRef.current.loadVideoById({ videoId: track.id });
+            if (isPlayingRef.current && typeof ytPlayerRef.current.playVideo === "function") {
+              setTimeout(() => {
+                try {
+                  ytPlayerRef.current?.playVideo();
+                } catch (err) {
+                  console.warn("YT play after load failed:", err);
+                }
+              }, 100);
+            }
           } catch (err) {
             console.error("YT Player load error:", err);
           }
