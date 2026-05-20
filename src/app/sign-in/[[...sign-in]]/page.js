@@ -1,33 +1,77 @@
 import { SignIn } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 
 export default function SignInPage() {
   return (
     <div style={{
       display: "flex",
       alignItems: "center",
-      justify-content: "center",
+      justifyContent: "center",
       minHeight: "100vh",
-      background: "radial-gradient(circle at center, #2e1065, #000000)",
+      background: "linear-gradient(145deg, #1a0533 0%, #0d0d1a 50%, #0a0a12 100%)",
       padding: "1rem"
     }}>
-      <SignIn 
-        appearance={{
-          variables: {
-            colorPrimary: "#a855f7",
-            colorBackground: "#141416",
-            colorInputBackground: "#1d1d21",
-            colorText: "#ffffff",
-            colorTextSecondary: "#94a3b8",
-            colorInputText: "#ffffff",
-            colorButtonText: "#ffffff",
-            colorTextOnPrimaryBackground: "#ffffff"
-          },
-          elements: {
-            card: "border border-zinc-800 shadow-2xl shadow-purple-900/20",
-            footerActionLink: "text-purple-400 hover:text-purple-300"
-          }
-        }}
-      />
+      <div style={{ textAlign: "center" }}>
+        <h1 style={{
+          fontSize: "2rem",
+          fontWeight: 800,
+          background: "linear-gradient(135deg, #a855f7, #ec4899)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          marginBottom: "0.25rem",
+          letterSpacing: "-0.5px"
+        }}>AuraSynq</h1>
+        <p style={{
+          color: "#a1a1aa",
+          fontSize: "0.9rem",
+          marginBottom: "1.5rem"
+        }}>Sign in to start vibing</p>
+        <SignIn 
+          appearance={{
+            baseTheme: dark,
+            variables: {
+              colorPrimary: "#a855f7",
+              colorBackground: "#18181b",
+              colorInputBackground: "#27272a",
+              colorText: "#fafafa",
+              colorTextSecondary: "#a1a1aa",
+              colorInputText: "#fafafa",
+              borderRadius: "12px",
+              fontSize: "0.95rem"
+            },
+            elements: {
+              card: { 
+                backgroundColor: "#18181b",
+                border: "1px solid #3f3f46",
+                boxShadow: "0 25px 50px rgba(0,0,0,0.5)"
+              },
+              headerTitle: { color: "#fafafa", fontSize: "1.2rem" },
+              headerSubtitle: { color: "#a1a1aa" },
+              socialButtonsBlockButton: { 
+                backgroundColor: "#27272a",
+                border: "1px solid #3f3f46",
+                color: "#fafafa"
+              },
+              socialButtonsBlockButtonText: { color: "#fafafa" },
+              formFieldLabel: { color: "#d4d4d8" },
+              formFieldInput: { 
+                backgroundColor: "#27272a",
+                border: "1px solid #3f3f46",
+                color: "#fafafa"
+              },
+              footerActionLink: { color: "#c084fc" },
+              footerActionText: { color: "#a1a1aa" },
+              dividerLine: { backgroundColor: "#3f3f46" },
+              dividerText: { color: "#71717a" },
+              formButtonPrimary: {
+                backgroundColor: "#a855f7",
+                color: "#ffffff",
+                fontWeight: 600
+              }
+            }
+          }}
+        />
+      </div>
     </div>
   );
 }
