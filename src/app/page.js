@@ -4,13 +4,13 @@ import TopBar from "@/components/TopBar";
 import Link from "next/link";
 
 const HOME_BUBBLES = [
-  { id: "chill",       name: "CHILL",    color: "linear-gradient(135deg, #11998e, #38ef7d)", path: "/category/chill",    size: 130 },
-  { id: "trending",    name: "TRENDING", color: "linear-gradient(135deg, #ff0844, #ffb199)", path: "/trends",             size: 145 },
-  { id: "focus",       name: "FOCUS",    color: "linear-gradient(135deg, #4776E6, #8E54E9)", path: "/category/focus",    size: 120 },
-  { id: "workout",     name: "WORKOUT",  color: "linear-gradient(135deg, #FF4500, #ff8c00)", path: "/category/workout",  size: 135 },
-  { id: "sleep",       name: "SLEEP",    color: "linear-gradient(135deg, #2C3E50, #4CA1AF)", path: "/category/sleep",    size: 115 },
-  { id: "tamil",       name: "TAMIL",    color: "linear-gradient(135deg, #f7971e, #ffd200)", path: "/category/tamil",    size: 125 },
-  { id: "electronic",  name: "ELECTRO",  color: "linear-gradient(135deg, #b224ef, #7579ff)", path: "/category/electronic", size: 118 },
+  { id: "chill",       name: "CHILL",    color: "#11998e", path: "/category/chill",    size: 130 },
+  { id: "trending",    name: "TRENDING", color: "#ff0844", path: "/trends",             size: 145 },
+  { id: "focus",       name: "FOCUS",    color: "#8e54e9", path: "/category/focus",    size: 120 },
+  { id: "workout",     name: "WORKOUT",  color: "#ff4500", path: "/category/workout",  size: 135 },
+  { id: "sleep",       name: "SLEEP",    color: "#4ca1af", path: "/category/sleep",    size: 115 },
+  { id: "tamil",       name: "TAMIL",    color: "#f7971e", path: "/category/tamil",    size: 125 },
+  { id: "electronic",  name: "ELECTRO",  color: "#b224ef", path: "/category/electronic", size: 118 },
 ];
 
 // Distribute bubbles in a visually interesting pattern
@@ -42,7 +42,7 @@ export default function Home() {
                 style={{
                   width: bubble.size,
                   height: bubble.size,
-                  background: bubble.color,
+                  "--bubble-color": bubble.color,
                   animationDelay: `${i * 1.2}s`,
                 }}
               >
