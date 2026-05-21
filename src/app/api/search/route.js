@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 const ytSearch = require('youtube-search-api');
-const fetch = globalThis.fetch || (url => import('node-fetch').then(m => m.default(url)));
+
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
