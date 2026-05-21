@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Sparkle, MagnifyingGlass, PlayCircle, Planet, User } from "@phosphor-icons/react/dist/ssr";
+import { Sparkle, MagnifyingGlass, PlayCircle, Planet, User } from "@phosphor-icons/react";
 import styles from "./AuraDial.module.css";
 import { useState } from "react";
 

@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
 import { useAudio } from "@/contexts/AudioContext";
-import { Play, ArrowLeft, MusicNotes } from "@phosphor-icons/react/dist/ssr";
+import { Play, ArrowLeft, MusicNotes } from "@phosphor-icons/react";
 import Link from "next/link";
 
 export default function Trends() {

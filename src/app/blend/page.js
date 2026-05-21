@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useAudio } from "@/contexts/AudioContext";
-import { Play, Pause, Shuffle, MusicNote, Sparkle, ArrowLeft, Users } from "@phosphor-icons/react/dist/ssr";
+import { Play, Pause, Shuffle, MusicNote, Sparkle, ArrowLeft, Users } from "@phosphor-icons/react";
 import Link from "next/link";
 
 const FRIEND_PROFILES = [

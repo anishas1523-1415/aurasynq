@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import { useEffect, useMemo, useState } from "react";
 import { useAudio } from "@/contexts/AudioContext";
-import { Play, ArrowLeft, Pause, MusicNote } from "@phosphor-icons/react/dist/ssr";
+import { Play, ArrowLeft, Pause, MusicNote } from "@phosphor-icons/react";
 import Link from "next/link";
 
 const CATEGORY_MAP = {

@@ -3,9 +3,8 @@ import styles from "./page.module.css";
 import { useState, useEffect, useRef } from "react";
 import { useAudio } from "@/contexts/AudioContext";
 import { useUser } from "@clerk/nextjs";
-import { Users, Microphone, MusicNote, Heartbeat, Chat } from "@phosphor-icons/react/dist/ssr";
+import { Users, Microphone, MusicNote, Heartbeat, Chat, ArrowLeft } from "@phosphor-icons/react";
 import Link from "next/link";
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 
 const MOCK_FRIENDS = [
   { id: 1, name: "Arun", avatar: "https://i.pravatar.cc/150?u=arun1", online: true },

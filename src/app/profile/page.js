@@ -5,7 +5,7 @@ import { useAudio } from "@/contexts/AudioContext";
 import {
   ChartBar, SignOut, MusicNote, Clock, Heart,
   Gear, Bell, Shield, ChevronRight, Play
-} from "@phosphor-icons/react/dist/ssr";
+} from "@phosphor-icons/react";
 
 export default function Profile() {
   const { user, isLoaded } = useUser();

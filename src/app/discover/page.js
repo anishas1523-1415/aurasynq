@@ -1,7 +1,7 @@
 "use client";
 import styles from "./page.module.css";
 import { useAudio } from "@/contexts/AudioContext";
-import { Heart, Share, Play, Pause, MusicNote, DotsThreeVertical } from "@phosphor-icons/react/dist/ssr";
+import { Heart, Share, Play, Pause, MusicNote, DotsThreeVertical } from "@phosphor-icons/react";
 import { useEffect, useState, useRef, useCallback } from "react";
 
 const QUERIES = [

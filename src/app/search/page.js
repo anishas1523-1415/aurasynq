@@ -1,6 +1,6 @@
 "use client";
 import styles from "./page.module.css";
-import { MagnifyingGlass, Play, ClockCounterClockwise, X } from "@phosphor-icons/react/dist/ssr";
+import { MagnifyingGlass, Play, ClockCounterClockwise, X } from "@phosphor-icons/react";
 import { useState, useEffect, useRef } from "react";
 import { useAudio } from "@/contexts/AudioContext";
 import { useRouter } from "next/navigation";

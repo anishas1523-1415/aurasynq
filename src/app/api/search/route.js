@@ -29,22 +29,8 @@ export async function GET(request) {
       hue: Math.floor(Math.random() * 360)
     }));
 
-    // Use YouTube oEmbed endpoint to validate embeddability. If oEmbed returns
-    // 200, the video is publicly embeddable; otherwise skip it.
-    const filtered = [];
-    await Promise.all(candidateTracks.map(async (t) => {
-      try {
-        const oembedUrl = `https://www.youtube.com/oembed?format=json&url=${encodeURIComponent(t.url)}`;
-        const res = await fetch(oembedUrl, { method: 'GET' });
-        if (res.ok) {
-          filtered.push(t);
-        }
-      } catch (e) {
-        // ignore non-embeddable or network errors for individual items
-      }
-    }));
-
-    return NextResponse.json({ tracks: filtered });
+    // Return candidate tracks directly to prevent blocking the search response with multiple external API calls
+    return NextResponse.json({ tracks: candidateTracks });
   } catch (error) {
     console.error('Search Error:', error);
     return NextResponse.json({ error: 'Failed to fetch tracks' }, { status: 500 });

@@ -1,6 +1,6 @@
 "use client";
 import styles from "./page.module.css";
-import { Heart, Plus } from "@phosphor-icons/react/dist/ssr";
+import { Heart, Plus } from "@phosphor-icons/react";
 
 export default function Library() {
   return (
