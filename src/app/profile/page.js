@@ -4,7 +4,7 @@ import { useUser, useClerk } from "@clerk/nextjs";
 import { useAudio } from "@/contexts/AudioContext";
 import {
   ChartBar, SignOut, MusicNote, Clock, Heart,
-  Gear, Bell, Shield, ChevronRight, Play
+  Gear, Bell, Shield, CaretRight, Play
 } from "@phosphor-icons/react";
 
 export default function Profile() {
@@ -131,7 +131,7 @@ export default function Profile() {
                 <h4>{label}</h4>
                 <p>{sub}</p>
               </div>
-              <ChevronRight size={18} className={styles.chevron} />
+              <CaretRight size={18} className={styles.chevron} />
             </div>
           ))}
 
